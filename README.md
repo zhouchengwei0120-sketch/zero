@@ -1,122 +1,120 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>ZERO | 潜意识实验室</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZERO AI | 全球领先的数字人与多语言视频转换平台</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body {
-            margin: 0; padding: 0;
-            background: #0a0a0a;
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            display: flex; justify-content: center; align-items: center;
-            min-height: 100vh; color: #d0d0d0;
+        body { background-color: #050505; color: #ffffff; font-family: 'Inter', sans-serif; }
+        .hero-gradient {
+            background: radial-gradient(circle at 50% 50%, #1e1e1e 0%, #050505 100%);
         }
-        .container {
-            width: 85%; max-width: 400px;
-            padding: 40px 30px;
-            background: #111;
-            border-radius: 4px;
-            box-shadow: 0 15px 50px rgba(0,0,0,0.8);
-            border-top: 3px solid #e74c3c;
-        }
-        .progress-num { font-size: 10px; letter-spacing: 3px; color: #555; margin-bottom: 8px; }
-        .bar-bg { width: 100%; height: 1px; background: #222; margin-bottom: 35px; }
-        .bar-fill { height: 100%; background: #e74c3c; width: 0%; transition: 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
-        h2 { font-size: 18px; line-height: 1.7; margin-bottom: 35px; font-weight: 400; letter-spacing: 0.5px; }
-        .btn {
-            display: block; width: 100%;
-            padding: 16px 20px; margin-bottom: 12px;
-            background: transparent;
-            border: 1px solid #222;
-            color: #999; cursor: pointer;
-            text-align: left; font-size: 14px;
+        .accent-color { color: #3b82f6; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
             transition: all 0.3s ease;
         }
-        .btn:hover { border-color: #e74c3c; color: #fff; background: #161616; padding-left: 25px; }
-        #result-box { display: none; text-align: center; }
-        .res-title { font-size: 26px; color: #e74c3c; margin-bottom: 25px; letter-spacing: 5px; font-weight: bold; }
-        .res-desc { font-size: 14px; line-height: 2; color: #888; text-align: justify; margin-bottom: 30px; }
-        .reload-btn {
-            background: #e74c3c; color: #fff; border: none;
-            padding: 15px; width: 100%; cursor: pointer; font-size: 14px; letter-spacing: 2px;
+        .glass-card:hover {
+            border-color: #3b82f6;
+            transform: translateY(-5px);
+        }
+        .api-code {
+            background: #111;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 14px;
+            color: #10b981;
         }
     </style>
 </head>
-<body>
+<body class="hero-gradient">
 
-<div class="container">
-    <div id="quiz">
-        <div class="progress-num" id="p-num">LOADING 01/18</div>
-        <div class="bar-bg"><div class="bar-fill" id="p-bar"></div></div>
-        <h2 id="q-text">正在初始化深度心理模型...</h2>
-        <div id="options"></div>
-    </div>
+    <nav class="flex justify-between items-center px-8 py-6 max-w-7xl mx-auto">
+        <div class="text-2xl font-bold tracking-tighter">ZERO <span class="accent-color">AI</span></div>
+        <div class="hidden md:flex space-x-8 text-sm text-gray-400">
+            <a href="#services" class="hover:text-white">核心服务</a>
+            <a href="#api" class="hover:text-white">API 文档</a>
+            <a href="#pricing" class="hover:text-white">价格方案</a>
+        </div>
+        <button class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full text-sm transition">立即开始</button>
+    </nav>
 
-    <div id="result-box">
-        <p style="font-size: 10px; color: #555; letter-spacing: 2px;">ANALYSIS RESULT</p>
-        <div class="res-title" id="r-title"></div>
-        <div class="res-desc" id="r-desc"></div>
-        <button class="reload-btn" onclick="location.reload()">RESTART TEST</button>
-    </div>
-</div>
+    <header class="max-w-7xl mx-auto px-8 py-20 text-center">
+        <h1 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">
+            让您的视频 <br> <span class="accent-color">通晓全球语言</span>
+        </h1>
+        <p class="text-gray-400 text-lg mb-10 max-w-2xl mx-auto">
+            利用尖端 AI 技术，实现数字人全自动化建模与视频多语言一键转换。打破文化隔阂，助力品牌全球出海。
+        </p>
+        
+        <div class="relative w-full max-w-4xl mx-auto aspect-video glass-card rounded-2xl flex items-center justify-center overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-tr from-blue-900/20 to-transparent"></div>
+            <div class="text-center">
+                <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 cursor-pointer hover:scale-110 transition">
+                    <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M4.5 3.5l11 6.5-11 6.5z"></path></svg>
+                </div>
+                <p class="text-sm text-gray-500">点击观看 AI 演示效果</p>
+            </div>
+        </div>
+    </header>
 
-<script>
-    const questions = [
-        { q: "1. 梦境投射：在一扇紧锁的门前，你直觉门后藏着什么？", options: [{ text: "一个从未见过的奇异新世界", type: 'E' }, { text: "你最珍视的宝物", type: 'G' }, { text: "一个正在看着你的“另一个自己”", type: 'C' }, { text: "解开人生谜团的答案之书", type: 'A' }] },
-        { q: "2. 冲突应对：当有人强烈质疑你的核心信念时，你第一反应是？", options: [{ text: "兴奋：终于有人来挑战我了", type: 'E' }, { text: "警惕：他可能会破坏稳定", type: 'G' }, { text: "愤怒：他根本不懂我的价值", type: 'C' }, { text: "冷静：分析他的逻辑漏洞", type: 'A' }] },
-        { q: "3. 孤岛生存：如果你被困荒岛，你最先寻找的是？", options: [{ text: "未知的出口", type: 'E' }, { text: "安全的住所", type: 'G' }, { text: "表达心境的工具", type: 'C' }, { text: "岛屿的地图", type: 'A' }] },
-        { q: "4. 面对黑暗：停电时，你脑海中浮现的第一个念头是？", options: [{ text: "寻找蜡烛探索", type: 'E' }, { text: "检查门窗锁好没", type: 'G' }, { text: "享受这份宁静", type: 'C' }, { text: "思考断电原因", type: 'A' }] },
-        { q: "5. 礼物选择：你会送给自己哪种礼物？", options: [{ text: "一张去远方的机票", type: 'E' }, { text: "一套高品质寝具", type: 'G' }, { text: "一件定制艺术品", type: 'C' }, { text: "一台精密观测仪", type: 'A' }] },
-        { q: "6. 时间旅行：如果你有时光机，你会去？", options: [{ text: "从未听闻的未来", type: 'E' }, { text: "最繁荣平稳的盛世", type: 'G' }, { text: "文艺复兴时期", type: 'C' }, { text: "宇宙起源的一刻", type: 'A' }] },
-        { q: "7. 社交聚会：在嘈杂的晚会上，你更倾向于？", options: [{ text: "认识每一个新面孔", type: 'E' }, { text: "照顾熟悉的朋友", type: 'G' }, { text: "独自观察角落", type: 'C' }, { text: "分析社交链条", type: 'A' }] },
-        { q: "8. 规则看法：面对一项不合理的规定，你会？", options: [{ text: "直接打破它", type: 'E' }, { text: "默默忍受保持秩序", type: 'G' }, { text: "用艺术方式嘲讽", type: 'C' }, { text: "寻找规则漏洞", type: 'A' }] },
-        { q: "9. 评价在意：你最不能接受别人评价你？", options: [{ text: "你很平庸无趣", type: 'E' }, { text: "你很不靠谱", type: 'G' }, { text: "你没有个性", type: 'C' }, { text: "你很无知", type: 'A' }] },
-        { q: "10. 宠物选择：如果你能养一只奇幻生物，是？", options: [{ text: "能飞的巨龙", type: 'E' }, { text: "温顺的独角兽", type: 'G' }, { text: "变幻莫测的精灵", type: 'C' }, { text: "通晓语言的狮身人面", type: 'A' }] },
-        { q: "11. 任务执行：面对复杂任务，你的习惯是？", options: [{ text: "直接上手摸索", type: 'E' }, { text: "先写个稳妥计划", type: 'G' }, { text: "加入自己的创意", type: 'C' }, { text: "查阅所有相关资料", type: 'A' }] },
-        { q: "12. 电影类型：你最喜欢看的电影是？", options: [{ text: "动作探险片", type: 'E' }, { text: "家庭伦理片", type: 'G' }, { text: "独立文艺片", type: 'C' }, { text: "硬核科幻悬疑", type: 'A' }] },
-        { q: "13. 核心渴望：你认为人生的终极意义是？", options: [{ text: "体验一切可能", type: 'E' }, { text: "建立温馨港湾", type: 'G' }, { text: "留下独特印记", type: 'C' }, { text: "理解世界真相", type: 'A' }] },
-        { q: "14. 金钱看法：对你来说，钱最重要的是？", options: [{ text: "购买自由的通行证", type: 'E' }, { text: "生活的保障金", type: 'G' }, { text: "支撑梦想的燃料", type: 'C' }, { text: "衡量价值的尺度", type: 'A' }] },
-        { q: "15. 面对失败：失败后你通常会？", options: [{ text: "换个跑道继续冲", type: 'E' }, { text: "反思哪里没做稳", type: 'G' }, { text: "感到自我价值受损", type: 'C' }, { text: "分析失败的数据", type: 'A' }] },
-        { q: "16. 理想居住：你向往的居住地是？", options: [{ text: "漂浮的房车", type: 'E' }, { text: "宁静的小镇别墅", type: 'G' }, { text: "艺术感公寓", type: 'C' }, { text: "极简实验室", type: 'A' }] },
-        { q: "17. 情绪管理：感到压力大时，你会？", options: [{ text: "去剧烈运动", type: 'E' }, { text: "回家大睡一场", type: 'G' }, { text: "写日记或画画", type: 'C' }, { text: "研究减压科学", type: 'A' }] },
-        { q: "18. 最终告别：你希望墓志铭上写着？", options: [{ text: "他从未停下", type: 'E' }, { text: "他守护了所爱", type: 'G' }, { text: "他独特且鲜活", type: 'C' }, { text: "他看透了真相", type: 'A' }] }
-    ];
+    <section id="services" class="max-w-7xl mx-auto px-8 py-20">
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="glass-card p-8 rounded-2xl">
+                <div class="w-12 h-12 bg-blue-500/10 rounded-lg flex items-center justify-center mb-6">
+                    <svg class="w-6 h-6 accent-color" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3 5h12M9 19H5a2 2 0 01-2-2V7a2 2 0 012-2h4m10 0h2a2 2 0 012 2v10a2 2 0 01-2 2h-2m-4-8a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                </div>
+                <h3 class="text-xl font-bold mb-4">视频多语言翻译</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">一键将原视频翻译为 40+ 种语言，完美克隆原声，口型同步率高达 99%。</p>
+            </div>
+            <div class="glass-card p-8 rounded-2xl">
+                <div class="w-12 h-12 bg-purple-500/10 rounded-lg flex items-center justify-center mb-6">
+                    <svg class="w-6 h-6 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                </div>
+                <h3 class="text-xl font-bold mb-4">企业级数字人定制</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">根据照片或真人口述，分钟级生成超写实数字人模型，支持 24/7 自动播报。</p>
+            </div>
+            <div class="glass-card p-8 rounded-2xl">
+                <div class="w-12 h-12 bg-green-500/10 rounded-lg flex items-center justify-center mb-6">
+                    <svg class="w-6 h-6 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                </div>
+                <h3 class="text-xl font-bold mb-4">AI 创作 API</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">强大的 Restful API 接口，支持将我们的 AI 能力无缝集成到您的自有业务系统中。</p>
+            </div>
+        </div>
+    </section>
 
-    const results = {
-        'E': { title: "探索者", desc: "你天生对未知充满渴望。你的潜意识里认为，生命在于不断的扩张和体验。你无视束缚，是那种能在危机中发现新大陆的人。但也请注意，有时停下来巩固已有成果也很重要。" },
-        'G': { title: "守护者", desc: "你追求秩序与安全感。你是社会和家庭的基石，极其可靠。你的潜意识里，保护你所爱的一切是最高使命。你拥有强大的风控能力，但有时会因为过度谨慎而显得保守。" },
-        'C': { title: "创作者", desc: "你是独特的代名词。你的内心有一面多棱镜，能看到别人看不到的色彩。你通过表达自我来获得存在感。你极其敏感，这给了你无限的灵感，但也让你容易受情绪波动影响。" },
-        'A': { title: "分析师", desc: "逻辑和真相是你的盔甲。你不轻易被情绪煽动，习惯于拆解事物背后的真相。你的潜意识里，知识就是力量。你可能是冷静的观察者，但别忘了生活除了逻辑，还有温情。" }
-    };
+    <section id="api" class="max-w-7xl mx-auto px-8 py-20 bg-[#080808] rounded-3xl border border-white/5">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-3xl font-bold mb-6">专为开发者设计</h2>
+                <p class="text-gray-400 mb-6">我们的 API 简单、高效。只需几行代码，即可在您的服务器上调用全球最顶尖的视频处理模型。</p>
+                <ul class="space-y-4 text-sm text-gray-300">
+                    <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg> 毫秒级响应速度</li>
+                    <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg> 全球 CDN 加速部署</li>
+                </ul>
+            </div>
+            <div class="api-code">
+                <span class="text-gray-500">// POST /v1/video/translate</span><br>
+                {<br>
+                &nbsp;&nbsp;"video_url": "https://zero-ai.com/demo.mp4",<br>
+                &nbsp;&nbsp;"source_lang": "zh",<br>
+                &nbsp;&nbsp;"target_lang": "jp",<br>
+                &nbsp;&nbsp;"avatar_sync": true<br>
+                }<br><br>
+                <span class="text-gray-500">// Response: 200 OK</span><br>
+                { "status": "processing", "id": "task_8892" }
+            </div>
+        </div>
+    </section>
 
-    let current = 0;
-    let scores = { 'E':0, 'G':0, 'C':0, 'A':0 };
+    <footer class="max-w-7xl mx-auto px-8 py-12 text-center text-gray-600 text-xs border-t border-white/5 mt-20">
+        <p>© 2025 ZERO AI LABS. 全球多语言视频处理专家.</p>
+        <p class="mt-2">日本 · 东京 | 海外市场业务部</p>
+    </footer>
 
-    function render() {
-        if(current >= questions.length) {
-            document.getElementById('quiz').style.display = 'none';
-            document.getElementById('result-box').style.display = 'block';
-            let max = 0, type = 'E';
-            for(let t in scores) { if(scores[t] > max) { max = scores[t]; type = t; } }
-            document.getElementById('r-title').innerText = results[type].title;
-            document.getElementById('r-desc').innerText = results[type].desc;
-            return;
-        }
-        const q = questions[current];
-        document.getElementById('p-num').innerText = `LOADING ${String(current+1).padStart(2, '0')}/18`;
-        document.getElementById('p-bar').style.width = ((current+1)/18*100) + '%';
-        document.getElementById('q-text').innerText = q.q;
-        const opts = document.getElementById('options');
-        opts.innerHTML = '';
-        q.options.forEach(o => {
-            const b = document.createElement('button');
-            b.className = 'btn';
-            b.innerText = o.text;
-            b.onclick = () => { scores[o.type]++; current++; render(); };
-            opts.appendChild(b);
-        });
-    }
-    render();
-</script>
 </body>
 </html>
